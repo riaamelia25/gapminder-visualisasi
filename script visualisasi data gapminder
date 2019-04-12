@@ -4,7 +4,7 @@ library(plotly)
 library(ggplot2)
 #input data 
 
-gapminder <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder_uts.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
+gapminder <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
 head(gapminder)
 
 #mengambil varibel
@@ -33,7 +33,7 @@ gdp_panel <- append(gdp_panel, x)
 }
 
 #mengambil data untuk sheet populasi
-gapminder1 <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder_uts.xlsx", sheet = 2, startRow = 1, colNames = TRUE)
+gapminder1 <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder.xlsx", sheet = 2, startRow = 1, colNames = TRUE)
 
 pop_panel <- c()
 for (i in 1:170) {
@@ -44,7 +44,7 @@ for (i in 1:170) {
 }
 
 #mengambil data untuk sheet 3
-gapminder2 <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder_uts.xlsx", sheet = 3, startRow = 1, colNames = TRUE)
+gapminder2 <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder.xlsx", sheet = 3, startRow = 1, colNames = TRUE)
 
 life_panel <- c()
 for (i in 1:170) {
@@ -55,7 +55,7 @@ for (i in 1:170) {
 }
 
 #mengambil varialbel region
-gapminder3 <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder_uts.xlsx", sheet = 4, startRow = 1, colNames = TRUE)
+gapminder3 <- read.xlsx("F://MATERI KULIAH UII//SEMESTER 6//Data Visualisasi//UTS//gapminder.xlsx", sheet = 4, startRow = 1, colNames = TRUE)
 
 region.vec <- gapminder3 [,6]
 region.vec
@@ -83,7 +83,7 @@ ggplotly(gap4)
 
 #Menyimpan Data Frame Kedalam Perangkat Laptop
 colnames(gapminder)<-c("Region","Country","Years","GDP","Population","Life")
-setwd("F:\\MATERI KULIAH UII\\SEMESTER 6\\Data Visualisasi\\UTS")
+setwd("F:\\MATERI KULIAH UII\\SEMESTER 6\\Data Visualisasi")
 write.csv(gapminder_frame, file="Visualisasi.Gapminder.csv", row.names = TRUE)
 gapminder.simpan<-data.frame(gapminder_frame)
 gapminder.simpan
